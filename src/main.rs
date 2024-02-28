@@ -7,7 +7,6 @@ use inflector::Inflector;
 use pokeget::cli::Args;
 use pokeget::sprites::{combine_sprites, get_sprites};
 use pokeget::utils::get_form;
-use pokeget::Data;
 use std::process::exit;
 
 fn format_name(name: &String) -> String {
