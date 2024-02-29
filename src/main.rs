@@ -19,7 +19,7 @@ fn main() {
     let args = Args::parse();
 
     if args.pokemon.is_empty() {
-        eprintln!("you must specify the pokemon you want to display");
+        eprintln!("Please specify the Pokémon to display");
         exit(1);
     }
 
@@ -27,8 +27,13 @@ fn main() {
 
     let mut pokemons = args.pokemon;
 
+    #[cfg(not(feature = "gen7"))]
     let (width, height, sprites) =
-        get_sprites(&mut pokemons, args.shiny, args.female, &form, &pokemon_list);
+        get_sprites(&mut pokemons, &pokemon_list, args.shiny, args.female, &form, None);
+    #[cfg(feature = "gen7")]
+    let (width, height, sprites) =
+        get_sprites(&mut pokemons, &pokemon_list, args.shiny, args.female, &form, Some(args.gen7));
+    
     let combined = combine_sprites(width, height, &sprites);
 
     if !args.hide_name {
