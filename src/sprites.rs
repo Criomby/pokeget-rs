@@ -93,7 +93,7 @@ pub fn get_sprites(
     shiny: bool,
     female: bool,
     form: &str,
-    gen7: Option<bool> // TODO: impl Into<Option<...>> for performance
+    gen7: Option<bool>
 ) -> (u32, u32, Vec<DynamicImage>) {
     let mut sprites = Vec::new();
     let mut combined_width: u32 = 0;

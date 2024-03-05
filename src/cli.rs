@@ -50,7 +50,7 @@ pub struct Args {
     #[arg(long, default_value_t = false)]
     pub galar: bool,
 
-    /// Display the female variant of the Pokémon if it exists. Doesn't apply to nidoran for some reason.
+    /// Display the female variant of the Pokémon if it exists. Doesn't apply to Nidoran for some reason.
     #[arg(long, default_value_t = false)]
     pub female: bool,
 
